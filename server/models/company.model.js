@@ -2,11 +2,8 @@ module.exports = (mongoose) => {
 	const schema = mongoose.Schema(
 		{
 			name: String,
-			username: String,
 		},
-		{
-			timestamps: true,
-		}
+		{ timestamps: true }
 	);
 
 	schema.method('toJSON', () => {
@@ -15,6 +12,6 @@ module.exports = (mongoose) => {
 		return object;
 	});
 
-	const User = mongoose.model('user', schema);
-	return User;
+	const Company = mongoose.model('company', schema);
+	return Company;
 };

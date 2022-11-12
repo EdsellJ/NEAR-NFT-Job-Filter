@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+@import './mixin/_font.css';
+@import './mixin/_button.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Manrope', sans-serif;
 }
 
 .App {
@@ -16,15 +19,7 @@ footer {
 }
 
 .container {
-	@apply mx-auto w-[1024px] lg:w-[880px] md:w-[720px] sm:w-[540px] xs:w-full xs:px-3;
-}
-
-button.primary {
-	@apply rounded-full border border-primary px-6 py-2 bg-primary text-white hover:bg-opacity-0 hover:text-primary;
-}
-
-.base-transition {
-	@apply transition-all duration-150 ease-in-out;
+	@apply flex flex-col mx-auto w-[1080px] lg:w-[880px] md:w-[720px] sm:w-full sm:px-6;
 }
 
 .text-gradient {

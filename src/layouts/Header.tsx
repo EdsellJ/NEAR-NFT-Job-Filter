@@ -7,18 +7,16 @@ const Header = () => {
 	const wallet = useAppSelector((state: RootState) => state.walletSlice.wallet);
 
 	const handleConnectWallet = async () => {
-		dispatch(await login());
+		await dispatch(login());
 	};
 
-	console.log(wallet)
+	console.log(wallet);
 
 	return (
-		<header className='shadow-md px-10'>
-			<nav className='flex items-center justify-end h-20'>
-				<button
-					className='primary base-transition'
-					onClick={handleConnectWallet}
-				>
+		<header className='flex items-center justify-between shadow-md h-16 px-4'>
+			<img src='/images/logo.png' alt='Logo' className='w-32 lg:w-24' />
+			<nav className='flex items-center'>
+				<button className='secondary disabled' onClick={handleConnectWallet}>
 					Connect Wallet
 				</button>
 			</nav>
