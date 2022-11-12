@@ -6,17 +6,23 @@ import Dropzone from 'components/Dropzone';
 import { useAppSelector } from 'app/hooks';
 import { RootState } from 'app/store';
 import { registerCompany } from 'utils/company';
+import { generateRandomToken } from 'utils';
 
 const Company = () => {
 	const [file, setFile] = useState({});
 	console.log(file);
+
 	const companyTypes = useAppSelector(
 		(state: RootState) => state.companySlice.type
 	);
+
 	const companySizes = useAppSelector(
 		(state: RootState) => state.companySlice.size
 	);
-	console.log(companySizes);
+
+	const token = generateRandomToken(64);
+
+	console.log(token);
 
 	const _companyTypes = companyTypes.map((companyType) => {
 		return {
@@ -24,14 +30,13 @@ const Company = () => {
 			label: companyType.type,
 		};
 	});
+
 	const _companySizes = companySizes.map((companySize) => {
 		return {
 			value: companySize._id,
 			label: companySize.size,
 		};
 	});
-	console.log(_companyTypes);
-
 	return (
 		<MainLayout title='Register Company'>
 			<Form
@@ -120,6 +125,15 @@ const Company = () => {
 							{(props: any) => (
 								<FinalFormInput component='textarea' rows={10} {...props} />
 							)}
+						</Field>
+						<Field
+							id='token'
+							name='token'
+							label='Token*'
+							defaultValue={token}
+							disabled
+						>
+							{(props: any) => <FinalFormInput {...props} required />}
 						</Field>
 						<button className='primary ml-auto mt-6'>REGISTER</button>
 					</form>
