@@ -22,16 +22,14 @@ const Company = () => {
 
 	const token = generateRandomToken(64);
 
-	console.log(token);
-
-	const _companyTypes = companyTypes.map((companyType) => {
+	const _companyTypes = (companyTypes ?? []).map((companyType) => {
 		return {
 			value: companyType._id,
 			label: companyType.type,
 		};
 	});
 
-	const _companySizes = companySizes.map((companySize) => {
+	const _companySizes = (companySizes ?? []).map((companySize) => {
 		return {
 			value: companySize._id,
 			label: companySize.size,
