@@ -37,7 +37,7 @@ const FinalFormInput = ({
 	};
 
 	return (
-		<div>
+		<div className='grow'>
 			{label !== '' && (
 				<label htmlFor={id} className='ml-2 text-xs font-bold'>
 					{label}

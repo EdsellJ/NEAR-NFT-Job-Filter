@@ -1,31 +1,27 @@
-import { useState } from 'react';
-import { Form, Field } from 'react-final-form';
-import MainLayout from 'layouts/MainLayout';
-import FinalFormInput from 'components/FinalFormInput';
-import Dropzone from 'components/Dropzone';
-import { useAppSelector } from 'app/hooks';
-import { RootState } from 'app/store';
-import { registerCompany } from 'utils/company';
-import { generateRandomToken } from 'utils';
+import { useState } from "react";
+import { Form, Field } from "react-final-form";
+import MainLayout from "layouts/MainLayout";
+import FinalFormInput from "components/FinalFormInput";
+import Dropzone from "components/Dropzone";
+import { useAppSelector } from "app/hooks";
+import { RootState } from "app/store";
+import { registerCompany } from "utils/company";
+import { generateRandomToken } from "utils";
 
 const Company = () => {
+	const [token, setToken] = useState("");
 	const [file, setFile] = useState({});
 	console.log(file);
 
-	const companyTypes = useAppSelector(
-		(state: RootState) => state.companySlice.type
-	);
+	const industries = useAppSelector((state: RootState) => state.companySlice.industry);
+	console.log(industries)
 
-	const companySizes = useAppSelector(
-		(state: RootState) => state.companySlice.size
-	);
+	const companySizes = useAppSelector((state: RootState) => state.companySlice.size);
 
-	const token = generateRandomToken(64);
-
-	const _companyTypes = (companyTypes ?? []).map((companyType) => {
+	const _industries = (industries ?? []).map((industry) => {
 		return {
-			value: companyType._id,
-			label: companyType.type,
+			value: industry._id,
+			label: industry.type,
 		};
 	});
 
@@ -35,79 +31,80 @@ const Company = () => {
 			label: companySize.size,
 		};
 	});
+
 	return (
-		<MainLayout title='Register Company'>
+		<MainLayout title="Register Company">
 			<Form
 				onSubmit={registerCompany}
 				render={({ handleSubmit }) => (
-					<form className='container py-8' onSubmit={handleSubmit}>
-						<h1 className='text-primary text-center'>REGISTER YOUR COMPANY</h1>
-						<div className='flex sm:flex-col gap-4 mt-8 mb-4 sm:mb-0'>
-							<div className='overflow-hidden rounded-md sm:mx-auto min-w-[264px] min-h-[264px] bg-opacity-0'>
+					<form className="container py-8" onSubmit={handleSubmit}>
+						<h1 className="text-primary text-center">REGISTER YOUR COMPANY</h1>
+						<div className="flex sm:flex-col gap-4 mt-8 mb-4 sm:mb-0">
+							<div className="overflow-hidden rounded-md sm:mx-auto min-w-[264px] max-w-[264px] min-h-[264px] bg-opacity-0">
 								<Dropzone
-									acceptType={{ 'image/*': [] }}
+									acceptType={{ "image/*": [] }}
 									setFile={(f: any, type: any) => {
 										setFile({ file: f, type: type });
 									}}
 								/>
 							</div>
-							<div className='grow'>
-								<Field id='name' name='name' label='Name*' placeholder='Apple'>
+							<div className="grow">
+								<Field id="name" name="name" label="Name*" placeholder="Apple">
 									{(props: any) => <FinalFormInput {...props} required />}
 								</Field>
-								<div className='grid grid-cols-2 sm:grid-cols-1 gap-x-2'>
+								<div className="grid grid-cols-2 sm:grid-cols-1 gap-x-2">
 									<Field
-										id='type'
-										name='type'
-										label='Type*'
-										placeholder='Please select'
-										options={_companyTypes}
+										id="industry"
+										name="industry"
+										label="Industry*"
+										placeholder="Please select"
+										options={_industries}
 									>
 										{(props: any) => (
-											<FinalFormInput component='select' required {...props} />
+											<FinalFormInput component="select" required {...props} />
 										)}
 									</Field>
 									<Field
-										id='url'
-										name='url'
-										label='Website URL'
-										placeholder='https://www.example.com'
+										id="url"
+										name="url"
+										label="Website URL"
+										placeholder="https://www.example.com"
 									>
 										{(props: any) => <FinalFormInput {...props} />}
 									</Field>
 									<Field
-										id='location'
-										name='location'
-										label='Location*'
-										placeholder='Location'
+										id="location"
+										name="location"
+										label="Location*"
+										placeholder="Location"
 									>
 										{(props: any) => <FinalFormInput required {...props} />}
 									</Field>
 									<Field
-										id='size'
-										name='size'
-										label='Size*'
-										placeholder='Please select'
+										id="size"
+										name="size"
+										label="Size*"
+										placeholder="Please select"
 										options={_companySizes}
 									>
 										{(props: any) => (
-											<FinalFormInput component='select' {...props} required />
+											<FinalFormInput component="select" {...props} required />
 										)}
 									</Field>
 									<Field
-										id='founded'
-										name='founded'
-										label='Founded Date'
-										placeholder='MM/DD/YYYY'
+										id="founded"
+										name="founded"
+										label="Founded Date"
+										placeholder="MM/DD/YYYY"
 									>
 										{(props: any) => <FinalFormInput required {...props} />}
 									</Field>
 									<Field
-										type='email'
-										id='contact'
-										name='contact'
-										label='Contact*'
-										placeholder='info@example.com'
+										type="email"
+										id="contact"
+										name="contact"
+										label="Contact*"
+										placeholder="info@example.com"
 									>
 										{(props: any) => <FinalFormInput {...props} required />}
 									</Field>
@@ -115,25 +112,19 @@ const Company = () => {
 							</div>
 						</div>
 						<Field
-							id='description'
-							name='description'
-							label='Description'
-							placeholder='Please write about your company'
+							id="description"
+							name="description"
+							label="Description"
+							placeholder="Please write about your company"
 						>
 							{(props: any) => (
-								<FinalFormInput component='textarea' rows={10} {...props} />
+								<FinalFormInput component="textarea" rows={10} {...props} />
 							)}
 						</Field>
-						<Field
-							id='token'
-							name='token'
-							label='Token*'
-							defaultValue={token}
-							disabled
-						>
+						<Field id="token" name="token" label="Token*" defaultValue={token} disabled>
 							{(props: any) => <FinalFormInput {...props} required />}
 						</Field>
-						<button className='primary ml-auto mt-6'>REGISTER</button>
+						<button className="primary ml-auto mt-6">REGISTER</button>
 					</form>
 				)}
 			/>

@@ -1,4 +1,5 @@
 export interface CompanyProps {
-	type: Record<any, any>[];
+	companyList: Record<any, any>[];
+	industry: Record<any, any>[];
 	size: Record<any, any>[];
 }

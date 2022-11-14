@@ -1,10 +1,13 @@
 {
-	"name": "job-listing",
-	"version": "0.1.0",
+	"name": "hello-near",
+	"version": "1.0.0",
+	"license": "(MIT AND Apache-2.0)",
 	"private": true,
 	"proxy": "http://localhost:8080",
 	"homepage": "./",
 	"dependencies": {
+		"@near-wallet-selector/core": "^7.2.0",
+		"@near-wallet-selector/near-wallet": "^7.2.0",
 		"@reduxjs/toolkit": "^1.9.0",
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^13.0.0",
@@ -14,6 +17,7 @@
 		"@types/react": "^18.0.0",
 		"@types/react-dom": "^18.0.0",
 		"axios": "^1.1.3",
+		"body-parser": "^1.20.1",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
@@ -29,6 +33,8 @@
 		"react-router-dom": "^6.4.3",
 		"react-script": "^2.0.5",
 		"react-scripts": "5.0.1",
+		"react-toastify": "^9.1.1",
+		"sweetalert2": "^11.6.8",
 		"typescript": "^4.4.2",
 		"web-vitals": "^2.1.0"
 	},
@@ -36,9 +42,15 @@
 		"dev:client": "react-scripts start",
 		"dev:server": "nodemon server/index",
 		"start": "node server/index",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"db:seed": "node server/seeds/index",
+		"deploy": "cd contract && ./deploy.sh",
+		"build": "yarn build:contract && yarn build:web",
+		"build:web": "react-scripts build",
+		"build:contract": "cd contract && ./build.sh",
+		"test": "yarn test:unit && yarn test:integration",
+		"test:unit": "cd contract && cargo test",
+		"test:integration": "cd integration-tests && cargo run --example integration-tests \"../contract/target/wasm32-unknown-unknown/release/hello_near.wasm\"",
+		"postinstall": "yarn install && echo rs tests && echo rs contract"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -60,6 +72,7 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.4.13",
+		"near-cli": "^3.4.2",
 		"postcss": "^8.4.18",
 		"tailwindcss": "^3.2.3"
 	}

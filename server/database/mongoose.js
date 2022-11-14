@@ -18,6 +18,7 @@ module.exports = {
 		});
 
 		db.mongoose.connection.on('connected', () => {
+
 			console.log(
 				'\x1b[32m%s\x1b[0m',
 				'✅ | Successfully CONNECTED TO THE DATABASE'
