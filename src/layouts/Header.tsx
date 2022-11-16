@@ -10,13 +10,11 @@ const Header = () => {
 		await dispatch(login());
 	};
 
-	console.log(wallet);
-
 	return (
 		<header className='flex items-center justify-between shadow-md h-16 px-4'>
 			<img src='/images/logo.png' alt='Logo' className='w-32 lg:w-24' />
 			<nav className='flex items-center'>
-				<button className='secondary disabled' onClick={handleConnectWallet}>
+				<button className='secondary' onClick={handleConnectWallet}>
 					Connect Wallet
 				</button>
 			</nav>

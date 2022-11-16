@@ -9,6 +9,8 @@ mongoose.connect(process.env.MONGO_URL, {
 const industry = require("./industry");
 const companySize = require("./companySize");
 const skill = require("./skill");
+const jobType = require("./jobType");
 // industry();
 // companySize();
 // skill();
+jobType();
