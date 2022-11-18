@@ -33,12 +33,12 @@ exports.getAllJobs = async (req, res) => {
 		} else {
 			result = await Job.find().populate(["companyId", "type"]);
 			const masteredCount = (skill) => {
-				return skill.filter(key => badges.includes(key)).length;
-			}
+				return skill.filter((key) => badges.includes(key)).length;
+			};
 			result = result.sort((lhs, rhs) => {
 				const leftCount = masteredCount(lhs.skill);
 				const rightCount = masteredCount(rhs.skill);
-				if (leftCount != rightCount) return rightCount - leftCount;
+				if (leftCount != rightCount) return rightCount - leftCount; //eslint-disable-line
 				return new Date(rhs.postedAt) - new Date(lhs.postedAt);
 			});
 		}

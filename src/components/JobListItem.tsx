@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getDateFormat } from "utils/job";
 
@@ -7,14 +7,14 @@ type Props = {
 };
 
 const JobListItem = (props: Props) => {
-	const [shown, setShown] = useState(false);
+	// const [shown, setShown] = useState(false);
 	const { job } = props;
 	return (
 		<Link
 			// to={`/job/${job._id}`}
 			to="/"
 			className="flex gap-4 transition-all duration-200 ease-in-out rounded-md p-4 bg-white cursor-pointer hover:shadow-md"
-			onClick={() => setShown((prev) => !prev)}
+			// onClick={() => setShown((prev) => !prev)}
 		>
 			<img src={job.companyId.img} alt="" className="shadow-md w-20 h-20" />
 			<div className="flex flex-col w-full">
