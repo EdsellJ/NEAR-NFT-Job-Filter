@@ -1,6 +1,6 @@
 interface Props {
 	type?: string;
-	component?: 'input' | 'textarea' | 'select' | 'autocomplete';
+	component?: "input" | "textarea" | "select" | "autocomplete";
 	input: any;
 	id?: string;
 	name?: string;
@@ -16,8 +16,8 @@ interface Props {
 }
 
 const FinalFormInput = ({
-	type = 'text',
-	component = 'input',
+	type = "text",
+	component = "input",
 	input,
 	id,
 	name,
@@ -37,18 +37,18 @@ const FinalFormInput = ({
 	};
 
 	return (
-		<div className='grow'>
-			{label !== '' && (
-				<label htmlFor={id} className='ml-2 text-xs font-bold'>
+		<div className="grow">
+			{label !== "" && (
+				<label htmlFor={id} className="ml-2 text-xs font-bold">
 					{label}
 				</label>
 			)}
-			{component === 'input' && (
+			{component === "input" && (
 				<input
 					type={type}
 					id={id}
 					name={name}
-					className='border border-darkgrey rounded-full outline-none w-full px-5 py-2'
+					className="border-none rounded-full outline-none w-full px-5 py-2"
 					placeholder={placeholder}
 					defaultValue={defaultValue}
 					disabled={disabled}
@@ -57,32 +57,32 @@ const FinalFormInput = ({
 					{...input}
 				/>
 			)}
-			{component === 'select' && (
+			{component === "select" && (
 				<select
 					id={id}
 					name={name}
-					className='border border-darkgrey rounded-full outline-none w-full px-5 py-2 appearance-none'
-					defaultValue=''
+					className="border-none rounded-full outline-none w-full px-5 py-2 appearance-none"
+					defaultValue=""
 					onChange={handleChange}
 					required={required}
 				>
-					<option value='' disabled selected hidden>
+					<option value="" disabled hidden>
 						{placeholder}
 					</option>
 					{options.map((option: any, index: number) => (
-						<option className='my-2' key={index} value={option.value}>
+						<option className="my-2" key={index} value={option.value}>
 							{option.label}
 						</option>
-					))}{' '}
+					))}{" "}
 				</select>
 			)}
-			{component === 'textarea' && (
+			{component === "textarea" && (
 				<textarea
 					type={type}
 					id={id}
 					name={name}
 					rows={rows}
-					className='border border-darkgrey rounded-2xl outline-none w-full px-5 py-3'
+					className="border-none rounded-2xl outline-none w-full px-5 py-3"
 					placeholder={placeholder}
 					defaultValue={defaultValue}
 					disabled={disabled}

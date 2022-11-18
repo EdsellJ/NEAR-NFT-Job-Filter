@@ -1,9 +1,5 @@
 import axios from "axios";
 
-export const registerCompany = (val: Record<any, any>) => {
-	console.log(val);
-};
-
 export const _getCompanyList = async () => {
 	const res = await axios.get("/api/company");
 	return res.data;

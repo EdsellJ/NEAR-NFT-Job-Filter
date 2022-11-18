@@ -1,11 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import walletSlice from 'redux/slices/walletSlice';
-import companySlice from 'redux/slices/companySlice';
+import { configureStore } from "@reduxjs/toolkit";
+import companySlice from "redux/slices/companySlice";
+import jobSlice from "redux/slices/jobSlice";
 
 export const store = configureStore({
 	reducer: {
-		walletSlice: walletSlice,
 		companySlice: companySlice,
+		jobSlice: jobSlice,
 	},
 });
 

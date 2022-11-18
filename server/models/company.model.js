@@ -6,10 +6,10 @@ module.exports = (mongoose) => {
 				unique: true,
 				required: true,
 			},
-      img: {
-        type: String,
-        required: true,
-      },
+			img: {
+				type: String,
+				required: true,
+			},
 			type: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "industry",
@@ -25,7 +25,7 @@ module.exports = (mongoose) => {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "company_size",
 			},
-			date: {
+			founded: {
 				type: String,
 			},
 			contact: {
@@ -38,7 +38,6 @@ module.exports = (mongoose) => {
 			},
 			token: {
 				type: String,
-				unique: true,
 			},
 		},
 		{

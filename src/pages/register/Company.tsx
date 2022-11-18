@@ -1,20 +1,24 @@
 import { useState } from "react";
 import { Form, Field } from "react-final-form";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
 import MainLayout from "layouts/MainLayout";
 import FinalFormInput from "components/FinalFormInput";
 import Dropzone from "components/Dropzone";
-import { useAppSelector } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
-import { registerCompany } from "utils/company";
 import { generateRandomToken } from "utils";
+import { getCompanyList } from "redux/slices/companySlice";
 
 const Company = () => {
+	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 	const [token, setToken] = useState("");
-	const [file, setFile] = useState({});
-	console.log(file);
+	const [file, setFile] = useState<any>();
+	const [image, setImage] = useState<any>();
 
 	const industries = useAppSelector((state: RootState) => state.companySlice.industry);
-	console.log(industries)
 
 	const companySizes = useAppSelector((state: RootState) => state.companySlice.size);
 
@@ -32,6 +36,25 @@ const Company = () => {
 		};
 	});
 
+	const registerCompany = async (val: Record<any, any>) => {
+		if (file === undefined) {
+			toast.warning("Please upload logo");
+			return;
+		}
+		try {
+			await axios.post("/api/company", {
+				...val,
+				img: image,
+				token,
+			});
+			toast.success("Company registered!");
+			dispatch(getCompanyList());
+			navigate("/");
+		} catch (err: any) {
+			toast.error(err.response.data);
+		}
+	};
+
 	return (
 		<MainLayout title="Register Company">
 			<Form
@@ -40,11 +63,14 @@ const Company = () => {
 					<form className="container py-8" onSubmit={handleSubmit}>
 						<h1 className="text-primary text-center">REGISTER YOUR COMPANY</h1>
 						<div className="flex sm:flex-col gap-4 mt-8 mb-4 sm:mb-0">
-							<div className="overflow-hidden rounded-md sm:mx-auto min-w-[264px] max-w-[264px] min-h-[264px] bg-opacity-0">
+							<div className="overflow-hidden rounded-md sm:mx-auto min-w-[264px] max-w-[264px] min-h-[264px] max-h-[264px] bg-opacity-0">
 								<Dropzone
 									acceptType={{ "image/*": [] }}
 									setFile={(f: any, type: any) => {
 										setFile({ file: f, type: type });
+									}}
+									setImage={(i: any) => {
+										setImage(i);
 									}}
 								/>
 							</div>
@@ -121,9 +147,20 @@ const Company = () => {
 								<FinalFormInput component="textarea" rows={10} {...props} />
 							)}
 						</Field>
-						<Field id="token" name="token" label="Token*" defaultValue={token} disabled>
-							{(props: any) => <FinalFormInput {...props} required />}
-						</Field>
+						<div
+							className="flex gap-2 items-center font-bold"
+							onClick={() => setToken(generateRandomToken(40))}
+						>
+							Token:
+							<input
+								type="text"
+								value={token}
+								className="border border-darkgrey rounded-full outline-none w-full px-5 py-2"
+								placeholder="Click to generate a new token"
+								disabled
+								title="Click to generate a new token"
+							/>
+						</div>
 						<button className="primary ml-auto mt-6">REGISTER</button>
 					</form>
 				)}

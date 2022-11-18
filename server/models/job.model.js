@@ -22,7 +22,7 @@ module.exports = (mongoose) => {
 				ref: "job_type",
 			},
 			skill: {
-				type: [mongoose.Schema.Types.ObjectId],
+				type: [String],
 				required: true,
 			},
 			from: {
