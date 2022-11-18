@@ -41,6 +41,7 @@ exports.getAllJobs = async (req, res) => {
 				if (leftCount != rightCount) return rightCount - leftCount; //eslint-disable-line
 				return new Date(rhs.postedAt) - new Date(lhs.postedAt);
 			});
+			result = result.filter((job) => masteredCount(job.skill) !== 0);
 		}
 		res.status(200).send(result);
 	} catch (err) {
