@@ -29,6 +29,7 @@
 		"mongoose": "^6.7.2",
 		"near-api-js": "^1.1.0",
 		"near-wallet-selector": "^2.1.0",
+		"nodemon": "^2.0.20",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-dropzone": "^14.2.3",
@@ -57,7 +58,7 @@
 		"test": "yarn test:unit && yarn test:integration",
 		"test:unit": "cd contract && cargo test",
 		"test:integration": "cd integration-tests && cargo run --example integration-tests \"../contract/target/wasm32-unknown-unknown/release/hello_near.wasm\"",
-		"postinstall": "yarn install && echo rs tests && echo rs contract"
+		"postinstall": "echo rs tests && echo rs contract"
 	},
 	"eslintConfig": {
 		"extends": [
