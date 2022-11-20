@@ -1,3 +1,4 @@
+require("dotenv").config();
 const execSync = require("child_process").execSync;
 const yaml = require("js-yaml");
 const environment = process.env.NODE_ENV || "development";

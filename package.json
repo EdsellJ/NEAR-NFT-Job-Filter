@@ -48,6 +48,7 @@
 		"dev:client": "react-scripts start",
 		"dev:server": "nodemon server/index",
 		"start": "node server/index",
+		"start:prod": "NODE_ENV=production && node server/index",
 		"db:seed": "node server/seeds/index",
 		"deploy": "cd contract && ./deploy.sh",
 		"build": "yarn build:contract && yarn build:web",

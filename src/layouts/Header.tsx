@@ -45,6 +45,17 @@ const Header = () => {
 	const handleConnectWallet = async () => {
 		set();
 	};
+	const handleLogout = async () => {
+		const selector = await setupWalletSelector({
+			network: process.env.REACT_APP_NEAR_ENV as any,
+			modules: [setupNearWallet()],
+		});
+		// if (selector?.isSignedIn()) {
+		const wallet = await selector.wallet();
+		await wallet.signOut();
+		setAccountId("");
+		// }
+	};
 
 	return (
 		<header className="flex items-center justify-between shadow-md h-16 px-4">
@@ -58,6 +69,9 @@ const Header = () => {
 				<Link to="/register/job" className="font-bold">
 					Post a job
 				</Link>
+				<button className="font-bold" onClick={handleLogout}>
+					Log out
+				</button>
 				<button className="secondary" onClick={handleConnectWallet}>
 					{accountId !== "" ? accountId : "Connect Wallet"}
 				</button>
