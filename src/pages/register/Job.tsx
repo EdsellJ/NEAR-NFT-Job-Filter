@@ -45,7 +45,7 @@ const Company = () => {
 
 	const registerJob = async (val: any) => {
 		try {
-			await axios.post("/api/job", {
+			await axios.post("http://localhost:8080/api/job", {
 				...val,
 				remote: remote,
 				skill: requiredSkill,

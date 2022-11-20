@@ -28,7 +28,7 @@ export const getNFTMetadata = async () => {
 	const contractId = process.env.REACT_APP_CONTRACT_ID;
 	console.log(accountId, contractId);
 	try {
-		const result = await axios.post("/api/getNFTs", { accountId, contractId });
+		const result = await axios.post("http://localhost:8080/api/getNFTs", { accountId, contractId });
 		console.log(result);
 	} catch (err) {
 		console.log(err);

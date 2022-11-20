@@ -25,7 +25,7 @@ const Header = () => {
 			const wallet = await selector.wallet();
 			const accounts = await wallet.getAccounts();
 			setAccountId(accounts[0].accountId);
-			const { data } = await axios.post("/api/contract/getNFTs", {
+			const { data } = await axios.post("http://localhost:8080/api/contract/getNFTs", {
 				accountId: accounts[0].accountId,
 				contractId: process.env.REACT_APP_CONTRACT_ID,
 			});

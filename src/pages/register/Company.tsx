@@ -42,7 +42,7 @@ const Company = () => {
 			return;
 		}
 		try {
-			await axios.post("/api/company", {
+			await axios.post("http://localhost:8080/api/company", {
 				...val,
 				img: image,
 				token,

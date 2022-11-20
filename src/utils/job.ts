@@ -1,17 +1,17 @@
 import axios from "axios";
 
 export const _getSkills = async () => {
-	const res = await axios.get("/api/job/skill");
+	const res = await axios.get("http://localhost:8080/api/job/skill");
 	return res.data;
 };
 
 export const _getJobTypes = async () => {
-	const res = await axios.get("/api/job/type");
+	const res = await axios.get("http://localhost:8080/api/job/type");
 	return res.data;
 };
 
 export const _getAllJobs = async (badges: string[]) => {
-	const res = await axios.post("/api/job/search", { badges: badges });
+	const res = await axios.post("http://localhost:8080/api/job/search", { badges: badges });
 	return res.data;
 };
 
