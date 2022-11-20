@@ -74,23 +74,12 @@ const Header = () => {
 				<nav style={{marginTop: '-5vh'}}>
 					{/* <Link to="/register/job" className="font-bold">
 					Post a job
-<<<<<<< Updated upstream
-				</Link>
-				<button className="font-bold" onClick={handleLogout}>
-					Log out
-				</button>
-				<button className="secondary" onClick={handleConnectWallet}>
-					{accountId !== "" ? accountId : "Connect Wallet"}
-				</button>
-			</nav>
-=======
 				</Link> */}
 					<button className="secondary" onClick={handleConnectWallet} style={{marginTop: '-5vh', marginRight: '1vw'}}>
 						{accountId !== "" ? accountId : "Connect Wallet"}
 					</button>
 				</nav>
 			</div>
->>>>>>> Stashed changes
 		</header>
 	);
 };
