@@ -75,6 +75,9 @@ const Header = () => {
 					{/* <Link to="/register/job" className="font-bold">
 					Post a job
 				</Link> */}
+				<button className="font-bold" onClick={handleLogout}>
+					Log out
+</button>
 					<button className="secondary" onClick={handleConnectWallet} style={{marginTop: '-5vh', marginRight: '1vw'}}>
 						{accountId !== "" ? accountId : "Connect Wallet"}
 					</button>
