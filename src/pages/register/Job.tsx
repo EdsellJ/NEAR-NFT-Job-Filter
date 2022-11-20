@@ -9,6 +9,7 @@ import FinalFormInput from "components/FinalFormInput";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
 import { getAllJobs } from "redux/slices/jobSlice";
+import '../../styles/mixin/_title.css';
 
 const Company = () => {
 	const dispatch = useAppDispatch();
@@ -59,99 +60,114 @@ const Company = () => {
 		}
 	};
 
+	const classes = {
+		form: {
+			border: '1px solid #ccc',
+			padding: '20px',
+			boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
+			borderRadius: '3px',
+			marginTop: '5vh',
+			marginBottom: '5vh'
+		}
+	}
+
 	return (
 		<MainLayout title="POST JOB">
 			<Form
 				onSubmit={(val) => registerJob(val)}
 				render={({ handleSubmit }) => (
-					<form className="container py-8" onSubmit={handleSubmit}>
-						<h1 className="text-primary text-center">POST A JOB</h1>
-						<div className="grid">
-							<Field
-								id="companyId"
-								name="companyId"
-								label="Company Name*"
-								placeholder="Select your company"
-								options={companyNames}
-							>
-								{(props: any) => (
-									<FinalFormInput component="select" {...props} required />
-								)}
-							</Field>
-							<Field
-								id="title"
-								name="title"
-								label="Title*"
-								placeholder="Senior Full Stack Engineer"
-							>
-								{(props: any) => <FinalFormInput {...props} required />}
-							</Field>
-							<div className="flex gap-4">
+					<>
+						<div style={{ height: '5vh' }}></div>
+						<h1 className="title text-center">POST A JOB</h1>
+						<form className="container py-8" onSubmit={handleSubmit} style={classes.form}>
+
+							<div className="grid">
 								<Field
-									id="location"
-									name="location"
-									label="Location*"
-									placeholder="123 St, Washington DC"
-								>
-									{(props: any) => <FinalFormInput {...props} required />}
-								</Field>
-								<div
-									className="flex items-center gap-2 mt-5"
-									onClick={() => setRemote((prev) => !prev)}
-								>
-									<label htmlFor="remote">Remote</label>
-									<input type="checkbox" id="remote" defaultChecked={remote} />
-								</div>
-							</div>
-							<div className="flex gap-x-4 md:flex-col">
-								<Field
-									id="type"
-									name="type"
-									label="Type*"
-									placeholder="Select your job type"
-									options={types}
+									id="companyId"
+									name="companyId"
+									label="Company Name*"
+									placeholder="Select your company"
+									options={companyNames}
 								>
 									{(props: any) => (
 										<FinalFormInput component="select" {...props} required />
 									)}
 								</Field>
 								<Field
-									id="from"
-									name="from"
-									label="Salary Range(Annual - From)"
-									placeholder="100000"
+									id="title"
+									name="title"
+									label="Title*"
+									placeholder="Senior Full Stack Engineer"
 								>
-									{(props: any) => <FinalFormInput {...props} />}
+									{(props: any) => <FinalFormInput {...props} required />}
 								</Field>
-								<Field
-									id="to"
-									name="to"
-									label="Salary Range(Annual - To)"
-									placeholder="100000"
-								>
-									{(props: any) => <FinalFormInput {...props} />}
-								</Field>
+								<div className="flex gap-4">
+									<Field
+										id="location"
+										name="location"
+										label="Location*"
+										placeholder="123 St, Washington DC"
+									>
+										{(props: any) => <FinalFormInput {...props} required />}
+									</Field>
+									<div
+										className="flex items-center gap-2 mt-5"
+										onClick={() => setRemote((prev) => !prev)}
+									>
+										<label htmlFor="remote">Remote</label>
+										<input type="checkbox" id="remote" defaultChecked={remote} />
+									</div>
+								</div>
+								<div className="flex gap-x-4 md:flex-col">
+									<Field
+										id="type"
+										name="type"
+										label="Type*"
+										placeholder="Select your job type"
+										options={types}
+									>
+										{(props: any) => (
+											<FinalFormInput component="select" {...props} required />
+										)}
+									</Field>
+									<Field
+										id="from"
+										name="from"
+										label="Salary Range(Annual - From)"
+										placeholder="100000"
+									>
+										{(props: any) => <FinalFormInput {...props} />}
+									</Field>
+									<Field
+										id="to"
+										name="to"
+										label="Salary Range(Annual - To)"
+										placeholder="100000"
+									>
+										{(props: any) => <FinalFormInput {...props} />}
+									</Field>
+								</div>
+								<Select
+									options={skills}
+									isMulti
+									className="my-3"
+									placeholder="Select required skills"
+									onChange={handleSelectSkill}
+								/>
 							</div>
-							<Select
-								options={skills}
-								isMulti
-								className="my-3"
-								placeholder="Select required skills"
-								onChange={handleSelectSkill}
-							/>
-						</div>
-						<Field
-							id="description"
-							name="description"
-							label="Description*"
-							placeholder="Please write about your company"
-						>
-							{(props: any) => (
-								<FinalFormInput component="textarea" rows={10} {...props} required />
-							)}
-						</Field>
-						<button className="primary ml-auto mt-6">POST</button>
-					</form>
+							<Field
+								id="description"
+								name="description"
+								label="Description*"
+								placeholder="Please write about your company"
+							>
+								{(props: any) => (
+									<FinalFormInput component="textarea" rows={10} {...props} required />
+								)}
+							</Field>
+							<button className="primary ml-auto mt-6">POST</button>
+						</form>
+					</>
 				)}
 			/>
 		</MainLayout>

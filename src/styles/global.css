@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
 @import "./mixin/_font.css";
 @import "./mixin/_button.css";
 
@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 * {
-	font-family: "Manrope", sans-serif;
+	font-family: "Inter", sans-serif;
 }
 
 .App {
@@ -15,7 +15,7 @@
 }
 
 main {
-	@apply grow bg-grey;
+	@apply grow bg-white;
 }
 
 footer {

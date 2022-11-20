@@ -1,5 +1,5 @@
 h1 {
-	@apply text-[55px] md:text-4xl leading-tight font-bold !important;
+	@apply text-[70px] md:text-4xl leading-tight font-medium !important;
 }
 
 h2 {

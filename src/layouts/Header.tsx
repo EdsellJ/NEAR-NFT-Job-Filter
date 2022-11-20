@@ -58,16 +58,23 @@ const Header = () => {
 	};
 
 	return (
-		<header className="flex items-center justify-between shadow-md h-16 px-4">
-			<Link to="/">
-				<img src="/images/logo.png" alt="Logo" className="w-32 lg:w-24" />
-			</Link>
-			<nav className="flex items-center gap-8">
-				<Link to="/register/company" className="font-bold">
-					Register company
+		<header>
+			<div className="flex items-center justify-start shadow-md h-16 px-4">
+				<Link to="/">
+					<img src="/images/near_logo.png" alt="Logo" className="w-32 lg:w-24" />
 				</Link>
-				<Link to="/register/job" className="font-bold">
+				<div className="">
+					<Link to="/register/company" style={{padding: '10px', marginLeft: '1vw'}}>
+						Register company
+					</Link>
+				</div>
+			</div>
+
+			<div className="flex justify-end">
+				<nav style={{marginTop: '-5vh'}}>
+					{/* <Link to="/register/job" className="font-bold">
 					Post a job
+<<<<<<< Updated upstream
 				</Link>
 				<button className="font-bold" onClick={handleLogout}>
 					Log out
@@ -76,6 +83,14 @@ const Header = () => {
 					{accountId !== "" ? accountId : "Connect Wallet"}
 				</button>
 			</nav>
+=======
+				</Link> */}
+					<button className="secondary" onClick={handleConnectWallet} style={{marginTop: '-5vh', marginRight: '1vw'}}>
+						{accountId !== "" ? accountId : "Connect Wallet"}
+					</button>
+				</nav>
+			</div>
+>>>>>>> Stashed changes
 		</header>
 	);
 };

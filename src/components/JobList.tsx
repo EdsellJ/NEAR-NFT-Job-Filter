@@ -4,6 +4,7 @@ import JobListItem from "./JobListItem";
 
 const JobList = () => {
 	const jobs = useAppSelector((state: RootState) => state.jobSlice.jobs);
+	
 	return (
 		<div className="grid gap-3 w-full">
 			{jobs.map((job, index) => (

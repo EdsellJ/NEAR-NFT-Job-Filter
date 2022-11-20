@@ -9,6 +9,7 @@ type Props = {
 const JobListItem = (props: Props) => {
 	// const [shown, setShown] = useState(false);
 	const { job } = props;
+
 	return (
 		<Link
 			// to={`/job/${job._id}`}
