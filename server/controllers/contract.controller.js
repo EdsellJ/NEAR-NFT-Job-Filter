@@ -1,7 +1,8 @@
 require("dotenv").config();
 const execSync = require("child_process").execSync;
 const yaml = require("js-yaml");
-const environment = process.env.NODE_ENV || "development";
+// const environment = process.env.NODE_ENV || "development";
+const environment = "production";
 
 exports.getNFTs = async (req, res) => {
 	try {
@@ -9,11 +10,13 @@ exports.getNFTs = async (req, res) => {
 		var re = new RegExp(find, "g");
 		const { contractId, accountId } = req.body;
 		const tmp = `{"account_id": "${accountId}"}`;
+		console.log(tmp);
 		// const str = environment === 'production' ? "'" + tmp + "'" : '"' + tmp.replaceAll('"', `""`) + '"';
 		const str =
 			environment === "production" ? "'" + tmp + "'" : '"' + tmp.replace(re, `""`) + '"';
 		let content = `near view ${contractId} nft_tokens_for_owner ` + str;
 		// let content = `near view ${contractId} nft_tokens_for_owner "{""account_id"": ""${accountId}""}"`;
+		console.log(content);
 		const output = await execSync(content, {
 			encoding: "utf-8",
 		});
