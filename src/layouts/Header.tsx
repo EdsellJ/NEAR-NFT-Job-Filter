@@ -71,7 +71,7 @@ const Header = () => {
 			</div>
 
 			<div className="flex justify-end">
-				<nav style={{ marginTop: '-5vh', marginRight: '2%' }}>
+				<nav style={{ marginTop: '-2.5%', marginRight: '2%' }}>
 					{/* <Link to="/register/job" className="font-bold">
 					Post a job
 				</Link> */}
