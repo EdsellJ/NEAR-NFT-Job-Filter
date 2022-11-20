@@ -64,24 +64,26 @@ const Header = () => {
 					<img src="/images/near_logo.png" alt="Logo" className="w-32 lg:w-24" />
 				</Link>
 				<div className="">
-					<Link to="/register/company" style={{padding: '10px', marginLeft: '1vw'}}>
+					<Link to="/register/company" style={{ padding: '10px', marginLeft: '1vw' }}>
 						Register company
 					</Link>
 				</div>
 			</div>
 
 			<div className="flex justify-end">
-				<nav style={{marginTop: '-5vh'}}>
+				<nav style={{ marginTop: '-5vh', marginRight: '2%' }}>
 					{/* <Link to="/register/job" className="font-bold">
 					Post a job
 				</Link> */}
-				<button className="font-bold" onClick={handleLogout}>
-					Log out
-</button>
-					<button className="secondary" onClick={handleConnectWallet} style={{marginTop: '-5vh', marginRight: '1vw'}}>
-						{accountId !== "" ? accountId : "Connect Wallet"}
+					<button className="font-bold" onClick={handleLogout}>
+						Log out
 					</button>
 				</nav>
+			</div>
+			<div className="flex justify-end">
+				<button className="secondary" onClick={handleConnectWallet} style={{ marginTop: '2%', marginRight: '2%' }}>
+					{accountId !== "" ? accountId : "Connect Wallet"}
+				</button>
 			</div>
 		</header>
 	);

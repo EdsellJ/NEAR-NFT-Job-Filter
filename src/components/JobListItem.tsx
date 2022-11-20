@@ -14,26 +14,31 @@ const JobListItem = (props: Props) => {
 		<Link
 			// to={`/job/${job._id}`}
 			to="/"
-			className="flex gap-4 transition-all duration-200 ease-in-out rounded-md p-4 bg-white cursor-pointer hover:shadow-md"
-			// onClick={() => setShown((prev) => !prev)}
+			className=" gap-4 transition-all duration-200 ease-in-out rounded-md p-4 bg-white hover:shadow-md shadow-indigo-500/50"
+			style={{ border: '2px solid lightgrey' }}
+		// onClick={() => setShown((prev) => !prev)}
 		>
-			<img src={job.companyId.img} alt="" className="shadow-md w-20 h-20" />
-			<div className="flex flex-col w-full">
-				<p className="text-base font-bold">{job.title}</p>
-				<p className="text-sm text-[#3F495A]">{job.companyId.name}</p>
-				<p className="mt-auto text-sm text-[#2F394A]">
-					{job.location} {job.remote && "· Remote"}
-				</p>
-				<div className="flex flex-wrap gap-x-3 text-sm text-darkgrey">
-					<p>{job.type.type}</p> {getDateFormat(job.postedAt)}
+			<div className="text-sm text-darkgrey" style={{ float: 'right' }}>
+				{getDateFormat(job.postedAt)} <p><b>{job.type.type}</b></p>
+			</div>
+			<div className="flex gap-4">
+				<img src={job.companyId.img} alt="" className="shadow-md shadow-indigo-500/50 w-20 h-20" style={{ padding: '2px', border: '1px solid lightgrey' }} />
+				<div className="w-1/5 mt-auto">
+					<p className="mt-auto text-md text-[#3F495A] font-bold">{job.companyId.name}</p>
+					<p className="text-sm text-[#2F394A]">
+						{job.location} {job.remote && "· Remote"}
+					</p>
 				</div>
-				<div className="mt-1 flex flex-wrap gap-x-3 text-sm font-semibold text-warning">
-					{job.skill.map((skill: string, index: number) => (
-						<div className="flex gap-1 items-center" key={index}>
-							<div className="rounded-full w-1.5 h-1.5 bg-black bg-opacity-75" />
-							{skill}
-						</div>
-					))}
+				<div className="flex flex-col w-full m-auto ml-4">
+					<p className="flex text-lg font-bold">{job.title}</p>
+					<div className="mt-1 flex flex-wrap gap-x-3 text-base font-semibold" style={{ color: '#6B6EF9' }}>
+						{job.skill.map((skill: string, index: number) => (
+							<div className="flex gap-1 items-center" key={index}>
+								<div className="rounded-full w-1.5 h-1.5 bg-black bg-opacity-75" />
+								{skill}
+							</div>
+						))}
+					</div>
 				</div>
 				{/* <div
 					className={`${

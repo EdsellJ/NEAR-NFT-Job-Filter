@@ -45,21 +45,23 @@ const Home = () => {
 				</div>
 				<div style={{ height: '5vh' }}></div>
 				<div className="container">
-				<label
-					htmlFor="filter-option"
-					className="flex items-center gap-2 mb-4 text-lg font-bold"
-				>
-					<input
-						type="checkbox"
-						id="filter-option"
-						className="w-4 h-4"
-						checked={filterByWallet}
-						onChange={() => setChecked((prev) => !prev)}
-					/>
-					Filter by wallet
-				</label>
+					<label
+						htmlFor="filter-option"
+						className="flex items-center gap-2 mb-4 text-lg font-bold"
+					>
+						<input
+							type="checkbox"
+							id="filter-option"
+							className="w-4 h-4"
+							checked={filterByWallet}
+							onChange={() => setChecked((prev) => !prev)}
+						/>
+						Filter by wallet
+					</label>
 				</div>
-				<JobList />
+				<div className="container" style={{backgroundColor: '#f1f1fd', marginBottom:'2%'}}>
+					<JobList />
+				</div>
 			</div>
 		</MainLayout>
 	);
