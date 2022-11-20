@@ -10,9 +10,10 @@ exports.getNFTs = async (req, res) => {
 		const { contractId, accountId } = req.body;
 		const tmp = `{"account_id": "${accountId}"}`;
 		// const str = environment === 'production' ? "'" + tmp + "'" : '"' + tmp.replaceAll('"', `""`) + '"';
-		const str =
-			environment === "production" ? "'" + tmp + "'" : '"' + tmp.replace(re, `""`) + '"';
-		let content = `near view ${contractId} nft_tokens_for_owner ` + str;
+		// const str =
+		// 	environment === "production" ? "'" + tmp + "'" : '"' + tmp.replace(re, `""`) + '"';
+		// let content = `near view ${contractId} nft_tokens_for_owner ` + str;
+		let content = `near view ${contractId} nft_tokens_for_owner "{""account_id"": ""${accountId}""}"`;
 		const output = await execSync(content, {
 			encoding: "utf-8",
 		});
