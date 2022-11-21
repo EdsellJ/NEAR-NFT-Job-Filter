@@ -1,0 +1,27 @@
+h1 {
+	@apply text-[70px] md:text-4xl leading-tight font-medium !important;
+}
+
+h2 {
+	@apply text-[40px] md:text-[26px] leading-tight font-bold !important;
+}
+
+h3 {
+	@apply text-3xl md:text-xl font-bold !important;
+}
+
+h4 {
+	@apply text-[21px] md:text-lg leading-tight font-medium !important;
+}
+
+.primary-text {
+	@apply text-lg md:text-base leading-tight font-medium !important;
+}
+
+p.paragraph {
+	@apply text-base md:text-sm leading-snug font-medium !important;
+}
+
+span.tag {
+	@apply text-xs font-semibold !important;
+}
