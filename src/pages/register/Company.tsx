@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
 import { generateRandomToken } from "utils";
 import { getCompanyList } from "redux/slices/companySlice";
-import '../../styles/mixin/_title.css';
+import "../../styles/mixin/_title.css";
 
 const Company = () => {
 	const dispatch = useAppDispatch();
@@ -56,16 +56,16 @@ const Company = () => {
 		}
 	};
 
-	const classes = {
-		form: {
-			border: '1px solid #ccc',
-			padding: '20px',
-			boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
-			borderRadius: '3px',
-			marginTop: '5vh',
-			marginBottom: '5vh'
-		}
-	}
+	// const classes = {
+	// 	form: {
+	// 		border: "1px solid #ccc",
+	// 		padding: "20px",
+	// 		boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)",
+	// 		borderRadius: "3px",
+	// 		marginTop: "5vh",
+	// 		marginBottom: "5vh",
+	// 	},
+	// };
 
 	return (
 		<MainLayout title="Register Company">
@@ -73,9 +73,13 @@ const Company = () => {
 				onSubmit={registerCompany}
 				render={({ handleSubmit }) => (
 					<>
-					<div style={{ height: '5vh' }}></div>
+						<div style={{ height: "5vh" }}></div>
 						<h1 className="title text-center">REGISTER YOUR COMPANY</h1>
-						<form className="container py-8" onSubmit={handleSubmit} style={classes.form}>
+						<form
+							className="container shadow-md border border-[#ccc] rounded-[3px] my-[5vh] p-5"
+							onSubmit={handleSubmit}
+							// style={classes.form}
+						>
 							<div className="flex sm:flex-col gap-4 mt-8 mb-4 sm:mb-0">
 								<div className="overflow-hidden rounded-md sm:mx-auto min-w-[264px] max-w-[264px] min-h-[264px] max-h-[264px] bg-opacity-0">
 									<Dropzone
@@ -164,7 +168,7 @@ const Company = () => {
 							<div
 								className="flex gap-2 items-center font-bold"
 								onClick={() => setToken(generateRandomToken(40))}
-								style={{marginTop: '2vh'}}
+								style={{ marginTop: "2vh" }}
 							>
 								Token:
 								<input

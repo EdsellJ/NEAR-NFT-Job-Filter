@@ -9,7 +9,7 @@ import FinalFormInput from "components/FinalFormInput";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
 import { getAllJobs } from "redux/slices/jobSlice";
-import '../../styles/mixin/_title.css';
+import "../../styles/mixin/_title.css";
 
 const Company = () => {
 	const dispatch = useAppDispatch();
@@ -60,16 +60,16 @@ const Company = () => {
 		}
 	};
 
-	const classes = {
-		form: {
-			border: '1px solid #ccc',
-			padding: '20px',
-			boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
-			borderRadius: '3px',
-			marginTop: '5vh',
-			marginBottom: '5vh'
-		}
-	}
+	// const classes = {
+	// 	form: {
+	// 		border: "1px solid #ccc",
+	// 		padding: "20px",
+	// 		boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)",
+	// 		borderRadius: "3px",
+	// 		marginTop: "5vh",
+	// 		marginBottom: "5vh",
+	// 	},
+	// };
 
 	return (
 		<MainLayout title="POST JOB">
@@ -77,10 +77,13 @@ const Company = () => {
 				onSubmit={(val) => registerJob(val)}
 				render={({ handleSubmit }) => (
 					<>
-						<div style={{ height: '5vh' }}></div>
+						<div style={{ height: "5vh" }}></div>
 						<h1 className="title text-center">POST A JOB</h1>
-						<form className="container py-8" onSubmit={handleSubmit} style={classes.form}>
-
+						<form
+							className="container shadow-md border border-[#ccc] rounded-[3px] my-[5vh] p-5"
+							onSubmit={handleSubmit}
+							// style={classes.form}
+						>
 							<div className="grid">
 								<Field
 									id="companyId"

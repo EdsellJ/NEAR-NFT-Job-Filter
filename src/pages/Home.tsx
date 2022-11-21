@@ -5,7 +5,7 @@ import JobList from "components/JobList";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { RootState } from "app/store";
 import { getAllJobs, setFilterByWallet } from "redux/slices/jobSlice";
-import '../styles/mixin/_title.css';
+import "../styles/mixin/_title.css";
 
 const Home = () => {
 	const filterByWallet = useAppSelector(
@@ -32,18 +32,16 @@ const Home = () => {
 		<MainLayout title="Home">
 			<div className="container justify-center items-center py-4">
 				<div>
-					<div style={{ height: '10vh' }}></div>
-					<h1 className="title" style={{}}>Your future is NEAR</h1>
-					<div style={{ height: '5vh' }}></div>
+					<div className="h-[10vh]"></div>
+					<h1 className="title">Your future is NEAR</h1>
+					<div className="h-[5vh]"></div>
 				</div>
 				<div className="container justify-center items-center">
-					<button className="primary" style={{}}>
-						<Link to="/register/job" className="font-bold">
-							Post a job
-						</Link>
-					</button>
+					<Link to="/register/job" className="font-bold">
+						<button className="primary">Post a job</button>
+					</Link>
 				</div>
-				<div style={{ height: '5vh' }}></div>
+				<div className="h-[5vh]"></div>
 				<div className="container">
 					<label
 						htmlFor="filter-option"
@@ -59,7 +57,7 @@ const Home = () => {
 						Filter by wallet
 					</label>
 				</div>
-				<div className="container" style={{backgroundColor: '#f1f1fd', marginBottom:'2%'}}>
+				<div className="container bg-[#f1f1fd] mb-[2%]">
 					<JobList />
 				</div>
 			</div>

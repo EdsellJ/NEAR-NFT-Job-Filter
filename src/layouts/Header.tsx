@@ -64,14 +64,14 @@ const Header = () => {
 					<img src="/images/near_logo.png" alt="Logo" className="w-32 lg:w-24" />
 				</Link>
 				<div className="">
-					<Link to="/register/company" style={{ padding: '10px', marginLeft: '1vw' }}>
+					<Link to="/register/company" className="p-2.5 ml-[1vw]">
 						Register company
 					</Link>
 				</div>
 			</div>
 
 			<div className="flex justify-end">
-				<nav style={{ marginTop: '-2.5%', marginRight: '2%' }}>
+				<nav className="mt-[-2.5%] mr-[2%]">
 					{/* <Link to="/register/job" className="font-bold">
 					Post a job
 				</Link> */}
@@ -81,7 +81,7 @@ const Header = () => {
 				</nav>
 			</div>
 			<div className="flex justify-end">
-				<button className="secondary" onClick={handleConnectWallet} style={{ marginTop: '2%', marginRight: '2%' }}>
+				<button className="secondary mt-[2%] mr-[2%]" onClick={handleConnectWallet}>
 					{accountId !== "" ? accountId : "Connect Wallet"}
 				</button>
 			</div>
