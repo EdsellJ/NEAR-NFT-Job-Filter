@@ -1,5 +1,6 @@
 import ReactHelmet from "react-helmet";
 import React, { PropsWithChildren } from "react";
+import NFTHeader from "./NFTHeader";
 
 interface Props {
 	title: string;
@@ -16,6 +17,7 @@ export default function NFTLayout({
 			<ReactHelmet>
 				<title>{title}</title>
 			</ReactHelmet>
+            <NFTHeader />
 			<main className={className}>{children}</main>
 		</div>
 	);
