@@ -14,6 +14,7 @@ import {
 	getCompanySizes,
 } from "redux/slices/companySlice";
 import { getSkills, getJobTypes, getAllJobs } from "redux/slices/jobSlice";
+import MintNFT from "pages/MintNFT";
 
 const App = () => {
 	const dispatch = useAppDispatch();
@@ -44,6 +45,7 @@ const App = () => {
 				<Route path="register/company" element={<RegisterCompany />} />
 				<Route path="register/job" element={<Job />} />
 				<Route path="/job/:_id" element={<Applicant />} />
+				<Route path="/mint-nft" element={<MintNFT />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>
