@@ -1,10 +1,10 @@
-import React from "react";
-import MainLayout from "layouts/MainLayout";
+import NFTHeroBanner from "components/NFTHeroBanner";
+import NFTLayout from "layouts/NFTLayout";
 
 export default function MintNFT() {
 	return (
-		<MainLayout title="Mint NFT's">
-			<section className="container"></section>
-		</MainLayout>
+		<NFTLayout title="Mint NFT's">
+			<NFTHeroBanner />
+		</NFTLayout>
 	);
 }
