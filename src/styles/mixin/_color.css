@@ -6,3 +6,14 @@
 	color: var(--deep-blue);
 }
 
+.border-gray {
+	border: 1px solid var(--deep-gray);
+}
+
+.border-blue {
+	border: 1px solid var(--deep-blue);
+}
+
+.jobboard {
+	background-color: var(--light-background);
+}
