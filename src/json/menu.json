@@ -1,10 +1,10 @@
 [
 	{
 		"text": "Badge Creator",
-		"link": "#badge-creator"
+		"link": "/badge-creator"
 	},
 	{
 		"text": "Job Board",
-		"link": "#job-board"
+		"link": "/job-board"
 	}
 ]
