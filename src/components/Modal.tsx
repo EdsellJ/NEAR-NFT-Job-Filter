@@ -34,9 +34,9 @@ export default function Modal({
 										{header}
 										<Button
 											className="p-1 border-0 text-black absolute right-0 -top-4 text-3xl leading-none font-semibold"
-											// onClick={modalHandler}
-											// icon={<Cancel />}
 											text="X"
+											onClickHandler={modalHandler}
+											// icon={<Cancel />}
 										/>
 									</div>
 								</div>
@@ -45,7 +45,9 @@ export default function Modal({
 										<h3 className="text-3xl font-semibold">{title}</h3>
 									</div>
 								)}
-								<div className="relative p-3 lg:p-6 w-96 h-40 flex mx-auto">{children}</div>
+								<div className="relative p-3 lg:p-6 w-96 h-40 flex mx-auto">
+									{children}
+								</div>
 							</div>
 						</div>
 					</div>

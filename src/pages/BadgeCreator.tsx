@@ -1,8 +1,9 @@
+import { useState } from "react";
+
 import NFTHeroBanner from "components/NFTHeroBanner";
 import TransactionLogTable from "components/TransactionLogTable";
 import NFTLayout from "layouts/NFTLayout";
 import Modal from "components/Modal";
-import { useState } from "react";
 
 export default function BadgeCreator() {
 	const [modal, setModal] = useState(false);
