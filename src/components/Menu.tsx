@@ -22,7 +22,7 @@ export default function Menu() {
 					</li>
 				))}
 			</ul>
-			<img src="/images/dino-icons.png" alt="dino-icon" className="w-8" />
+			{/* <img src="/images/dino-icons.png" alt="dino-icon" className="w-8" /> */}
 		</nav>
 	);
 }
