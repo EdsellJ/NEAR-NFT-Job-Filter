@@ -3,42 +3,42 @@
 		"title": "Junior Full Stack Engineer",
 		"salary": "$95k-120k",
 		"tags": ["Full Time", "Remote"],
-		"logo": "",
+		"logo": "/images/nintendo.png",
 		"posted": "2 days ago"
 	},
 	{
 		"title": "Junior Frontend Engineer",
 		"salary": "$95k-110k",
 		"tags": ["Full Time", "Remote"],
-		"logo": "",
+		"logo": "/images/microsoft.png",
 		"posted": "3 days ago"
 	},
 	{
 		"title": "Backend  Engineer",
 		"salary": "$100k-120k",
 		"tags": ["Full Time", "Onsite"],
-		"logo": "",
+		"logo": "/images/figma.png",
 		"posted": "4 days ago"
 	},
 	{
 		"title": "Frontend Engineer",
 		"salary": "$100k-130k",
 		"tags": ["Full Time", "Remote"],
-		"logo": "",
+		"logo": "/images/dribble.png",
 		"posted": "5 days ago"
 	},
 	{
 		"title": "Staff Engineer",
 		"salary": "$180k-230k",
 		"tags": ["Full Time", "Remote"],
-		"logo": "",
+		"logo": "/images/airbnb.png",
 		"posted": "6 days ago"
 	},
 	{
 		"title": "Staff Engineer",
 		"salary": "$185k-200k",
 		"tags": ["Full Time", "Remote"],
-		"logo": "",
+		"logo": "/images/netflix.png",
 		"posted": "5 days ago"
 	}
 ]
