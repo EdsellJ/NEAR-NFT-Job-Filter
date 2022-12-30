@@ -10,11 +10,13 @@ export default function TransactionLogTable() {
 				</div>
 				<table className="w-full">
 					<thead className="py-4 bg-deep-blue text-white border border-black">
-						{transactionLogs.head.map((item) => (
-							<th key={item.key} className="border py-3 border-black">
-								{item.text}
-							</th>
-						))}
+						<tr>
+							{transactionLogs.head.map((item) => (
+								<th key={item.key} className="border py-3 border-black">
+									{item.text}
+								</th>
+							))}
+						</tr>
 					</thead>
 					<tbody>
 						{transactionLogs.body.map((item, index) => {
