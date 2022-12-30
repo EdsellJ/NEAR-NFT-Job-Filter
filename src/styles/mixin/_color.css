@@ -1,0 +1,7 @@
+.bg-deep-blue {
+	background-color: var(--deep-blue);
+}
+
+.text-deep-blue {
+	color: var(--deep-blue);
+}

@@ -1,18 +1,12 @@
 interface Props {
 	className: string;
-	type?: "button" | "submit" | "reset";
 	text: string;
 	onClickHandler?: () => void;
 }
 
-export default function Button({
-	className,
-	type = "button",
-	text,
-	onClickHandler,
-}: Props) {
+export default function Button({ className, text, onClickHandler }: Props) {
 	return (
-		<button className={className} type={type} onClick={onClickHandler}>
+		<button className={className} onClick={onClickHandler}>
 			{text}
 		</button>
 	);
