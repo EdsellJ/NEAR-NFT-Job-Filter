@@ -15,6 +15,7 @@ import {
 } from "redux/slices/companySlice";
 import { getSkills, getJobTypes, getAllJobs } from "redux/slices/jobSlice";
 import BadgeCreator from "pages/BadgeCreator";
+import JobBoard from "pages/JobBoard";
 
 const App = () => {
 	const dispatch = useAppDispatch();
@@ -46,6 +47,7 @@ const App = () => {
 				<Route path="register/job" element={<Job />} />
 				<Route path="/job/:_id" element={<Applicant />} />
 				<Route path="/badge-creator" element={<BadgeCreator />} />
+				<Route path="/job-board" element={<JobBoard />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>

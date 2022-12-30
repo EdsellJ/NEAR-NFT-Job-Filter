@@ -9,8 +9,8 @@ export default function Menu() {
 	};
 
 	return (
-		<nav className="w-1/3 flex items-center">
-			<ul className="w-2/3 flex space-x-6">
+		<nav className="flex items-center">
+			<ul className="flex space-x-6">
 				{menuContent.map((item) => (
 					<li key={item.text}>
 						<NavLink
