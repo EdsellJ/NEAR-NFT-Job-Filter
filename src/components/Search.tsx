@@ -10,9 +10,9 @@ export default function Search() {
 			<form className="search space-x-6 w-9/12 flex items-center my-4">
 				<div className="input w-11/12 relative">
 					<img
-						src="/images/search.png"
+						src="/images/search.svg"
 						alt="search"
-						className="absolute w-full top-3.5 left-8 w-4"
+						className="absolute top-3.5 w-4 left-8"
 					/>
 					<input
 						className="rounded border-blue w-full py-2 pl-16"
@@ -21,7 +21,7 @@ export default function Search() {
 				</div>
 				<div className="input w-11/12 relative">
 					<img
-						src="/images/location.png"
+						src="/images/location.svg"
 						alt="search"
 						className="absolute top-3.5 w-4 left-8"
 					/>
