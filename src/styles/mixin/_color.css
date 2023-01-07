@@ -17,3 +17,19 @@
 .jobboard {
 	background-color: var(--light-background);
 }
+
+.hover-element:hover {
+	opacity: 0.8;
+}
+
+.hover-bg-deep-blue:hover {
+	color: var(--deep-blue);
+	border: 1px solid var(--deep-blue);
+	background-color: transparent;
+}
+
+.hover-bg-light-blue:hover {
+	color: white;
+	border: 1px solid var(--deep-blue);
+	background-color: var(--deep-blue);
+}

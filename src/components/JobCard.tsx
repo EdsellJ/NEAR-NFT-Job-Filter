@@ -10,7 +10,7 @@ interface Props {
 
 export default function JobCard({ job }: Props) {
 	return (
-		<div className="border bg-white border-gray rounded-xl py-5 px-4">
+		<div className="border bg-white border-gray rounded-xl py-5 px-4 hover-element">
 			<div className="top flex items-start justify-between">
 				<div className="w-1/5">
 					<img className="w-4/5" src={job.logo} alt={job.title} />
@@ -20,7 +20,10 @@ export default function JobCard({ job }: Props) {
 					<p className="font-light text-deep-blue mt-2">{job.salary}</p>
 					<ul className="space-x-3 flex mt-4">
 						{job.tags.map((item) => (
-							<li key={item} className="rounded-full text-deep-blue font-light border border-blue py-1 px-4">
+							<li
+								key={item}
+								className="rounded-full text-deep-blue font-light border border-blue py-1 px-4 hover-bg-light-blue"
+							>
 								{item}
 							</li>
 						))}
