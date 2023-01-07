@@ -9,11 +9,8 @@ export default function JobboardDetails() {
 	const location = useLocation();
 	const jobDetails = jobContent.filter((item) => {
 		const jobSlug = toSlug(`${item.title}-at-${item.company}`);
-		console.log("jobSlug", jobSlug);
 		return location.pathname.includes(jobSlug);
 	})[0];
-	console.log("location", location);
-	console.log("jobDetails", jobDetails);
 
 	return (
 		<NFTLayout title="Job board" className="jobboard pb-14">
