@@ -4,8 +4,8 @@ export default function JobboardDetails() {
 	return (
 		<NFTLayout title="Job board" className="jobboard pb-14">
 			<section className="container">
-                
-            </section>
+				<h1>Hello</h1>
+			</section>
 		</NFTLayout>
 	);
 }
