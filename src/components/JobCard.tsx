@@ -10,7 +10,7 @@ interface Props {
 
 export default function JobCard({ job }: Props) {
 	return (
-		<div className="border bg-white border-gray rounded-xl py-5 px-4 hover-element">
+		<div className="border bg-white border-gray rounded-xl py-5 px-4">
 			<div className="top flex items-start justify-between">
 				<div className="w-1/5">
 					<img className="w-4/5" src={job.logo} alt={job.title} />

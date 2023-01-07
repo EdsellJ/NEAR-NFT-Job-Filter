@@ -13,7 +13,7 @@ export default function NFTHeroBanner() {
 					</p>
 					<Button
 						text="Mint a Badge"
-						className="rounded-full font-bold bg-deep-blue py-3 text-white border-none px-8 bg-red-500 mt-6"
+						className="rounded-full font-bold bg-deep-blue py-3 text-white border px-8 bg-red-500 mt-6 hover-bg-deep-blue"
 					/>
 				</div>
 				<div className="image w-1/2">
