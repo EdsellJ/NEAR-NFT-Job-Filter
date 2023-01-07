@@ -2,43 +2,121 @@
 	{
 		"title": "Junior Full Stack Engineer",
 		"salary": "$95k-120k",
+		"company": "Nintendo",
 		"tags": ["Full Time", "Remote"],
 		"logo": "/images/nintendo.png",
-		"posted": "2 days ago"
+		"posted": "2 days ago",
+		"location": "Austin, TX",
+		"aboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Convallis a cras semper auctor neque vitae tempus. Iaculis urna id volutpat lacus.",
+		"responsibilities": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		],
+		"requirements": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		]
 	},
 	{
 		"title": "Junior Frontend Engineer",
 		"salary": "$95k-110k",
+		"company": "Microsoft",
 		"tags": ["Full Time", "Remote"],
 		"logo": "/images/microsoft.png",
-		"posted": "3 days ago"
+		"location": "Austin, TX",
+		"posted": "3 days ago",
+		"aboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Convallis a cras semper auctor neque vitae tempus. Iaculis urna id volutpat lacus.",
+		"responsibilities": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		],
+		"requirements": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		]
 	},
 	{
 		"title": "Backend  Engineer",
 		"salary": "$100k-120k",
+		"company": "Figma",
 		"tags": ["Full Time", "Onsite"],
 		"logo": "/images/figma.png",
-		"posted": "4 days ago"
+		"location": "Austin, TX",
+		"posted": "4 days ago",
+		"aboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Convallis a cras semper auctor neque vitae tempus. Iaculis urna id volutpat lacus.",
+		"responsibilities": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		],
+		"requirements": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		]
 	},
 	{
 		"title": "Frontend Engineer",
 		"salary": "$100k-130k",
+		"company": "Dribble",
 		"tags": ["Full Time", "Remote"],
 		"logo": "/images/dribble.png",
-		"posted": "5 days ago"
+		"location": "Austin, TX",
+		"posted": "5 days ago",
+		"aboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Convallis a cras semper auctor neque vitae tempus. Iaculis urna id volutpat lacus.",
+		"responsibilities": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		],
+		"requirements": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		]
 	},
 	{
 		"title": "Staff Engineer",
 		"salary": "$180k-230k",
+		"company": "Airbnb",
 		"tags": ["Full Time", "Remote"],
 		"logo": "/images/airbnb.png",
-		"posted": "6 days ago"
+		"location": "Austin, TX",
+		"posted": "6 days ago",
+		"aboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Convallis a cras semper auctor neque vitae tempus. Iaculis urna id volutpat lacus.",
+		"responsibilities": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		],
+		"requirements": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		]
 	},
 	{
 		"title": "Staff Engineer",
 		"salary": "$185k-200k",
+		"company": "Netflix",
 		"tags": ["Full Time", "Remote"],
 		"logo": "/images/netflix.png",
-		"posted": "5 days ago"
+		"location": "Austin, TX",
+		"posted": "5 days ago",
+		"aboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Convallis a cras semper auctor neque vitae tempus. Iaculis urna id volutpat lacus.",
+		"responsibilities": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		],
+		"requirements": [
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet",
+			"Lorem ipsum dolor sit amet"
+		]
 	}
 ]

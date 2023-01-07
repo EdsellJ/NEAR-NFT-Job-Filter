@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import Home from "pages/Home";
 import RegisterCompany from "pages/register/Company";
 import Job from "pages/register/Job";
@@ -16,6 +16,8 @@ import {
 import { getSkills, getJobTypes, getAllJobs } from "redux/slices/jobSlice";
 import BadgeCreator from "pages/BadgeCreator";
 import JobBoard from "pages/JobBoard";
+import JobboardDetails from "components/JobboardDetails";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
 	const dispatch = useAppDispatch();
@@ -48,6 +50,7 @@ const App = () => {
 				<Route path="/job/:_id" element={<Applicant />} />
 				<Route path="/badge-creator" element={<BadgeCreator />} />
 				<Route path="/job-board" element={<JobBoard />} />
+				<Route path="/job-board/:_id" element={<JobboardDetails />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>
