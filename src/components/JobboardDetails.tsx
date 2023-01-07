@@ -3,16 +3,18 @@ import { useLocation } from "react-router-dom";
 import NFTLayout from "layouts/NFTLayout";
 import jobContent from "json/jobs.json";
 import toSlug from "utils/toSlug";
-import Button from "./Button";
+import Button from "components/Button";
 
 export default function JobboardDetails() {
 	const location = useLocation();
-	console.log("location", location);
 	const jobDetails = jobContent.filter((item) => {
-		const slugTitle = toSlug(item.title);
-		return location.pathname.includes(slugTitle);
+		const jobSlug = toSlug(`${item.title}-at-${item.company}`);
+		console.log("jobSlug", jobSlug);
+		return location.pathname.includes(jobSlug);
 	})[0];
+	console.log("location", location);
 	console.log("jobDetails", jobDetails);
+
 	return (
 		<NFTLayout title="Job board" className="jobboard pb-14">
 			<section className="container py-8 text-deep-blue">
@@ -42,16 +44,16 @@ export default function JobboardDetails() {
 				<p className="my-1 leading-loose w-4/5">{jobDetails.aboutUs}</p>
 				<h4 className="text-deep-blue my-2">Responsibilities</h4>
 				<ul>
-					{jobDetails.responsibilities.map((item) => (
-						<li key={item} className="my-2">
+					{jobDetails.responsibilities.map((item, index) => (
+						<li key={`${item}-${index}`} className="my-2">
 							{item}
 						</li>
 					))}
 				</ul>
 				<h4 className="text-deep-blue my-2">Requirements</h4>
 				<ul>
-					{jobDetails.responsibilities.map((item) => (
-						<li key={item} className="my-2">
+					{jobDetails.responsibilities.map((item, index) => (
+						<li key={`${item}-${index}`} className="my-2">
 							{item}
 						</li>
 					))}
