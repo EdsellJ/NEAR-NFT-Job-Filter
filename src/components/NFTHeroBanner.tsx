@@ -8,8 +8,11 @@ export default function NFTHeroBanner() {
 					<h2 className="text-xl text-deep-blue my-2">EduCoin Badge Creator</h2>
 					<p>
 						By clicking “Mint a Badge” you are creating a non-fungible token which can be
-						used to certify skills or access content. This NFT will be saved to a live
-						blockchain.
+						used to certify skills on the NEAR blockchain.
+						<br />
+						<br />
+						This token can be used to check references and validate proof of work and
+						learned skills.
 					</p>
 					<Button
 						text="Mint a Badge"
