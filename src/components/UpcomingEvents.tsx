@@ -36,7 +36,12 @@ export default function UpcomingEvents() {
 								<h2 className="font-bold my-4">{briteEvent.name.text}</h2>
 								<p>{briteEvent.description.text}</p>
 								<div className="bottom-info my-8 flex justify-between">
-									<a href={briteEvent.url} className="text-red-500 underline">
+									<a
+										href={briteEvent.url}
+										target="_blank"
+										rel="noreferrer"
+										className="text-red-500 underline"
+									>
 										Vist Event ({briteEvent.is_free ? "free" : "paid"})
 									</a>
 									<div className="date flex flex-col">
