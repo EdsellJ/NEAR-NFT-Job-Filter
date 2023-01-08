@@ -1,11 +1,15 @@
 // import { useState } from "react";
 //
+import { useQuery } from "@tanstack/react-query";
 import NFTHeroBanner from "components/NFTHeroBanner";
 // import TransactionLogTable from "components/TransactionLogTable";
 import NFTLayout from "layouts/NFTLayout";
+import { getEventBriteEventList } from "utils/getEvents";
 // import Modal from "components/Modal";
 
 export default function BadgeCreator() {
+	const { data, status } = useQuery(["list-event"], getEventBriteEventList);
+	console.log("status", status, "data", data);
 	// const [modal, setModal] = useState(false);
 	return (
 		<>
