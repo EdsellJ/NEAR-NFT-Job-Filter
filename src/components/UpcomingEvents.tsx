@@ -25,7 +25,7 @@ export default function UpcomingEvents() {
 						const eventStartDate = formatDate(briteEvent.start.utc);
 						const eventEndDate = formatDate(briteEvent.end.utc);
 						return (
-							<li key={briteEvent.id} className="">
+							<li key={briteEvent.id} className="my-6">
 								<img
 									src={briteEvent.logo.original.url}
 									height={`${briteEvent.logo.crop_mask.height}px`}
