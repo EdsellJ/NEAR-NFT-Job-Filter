@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
 
-export default function Logo() {
+interface Props {
+	noLink?: boolean;
+}
+
+export default function Logo({ noLink }: Props) {
 	return (
-		<Link to="/" className="w-1/6">
-			<img src="/images/logo.png" alt="Logo" />
-		</Link>
+		<>
+			{noLink ? (
+				<img src="/images/logo.png" alt="Logo" />
+			) : (
+				<Link to="/" className="w-1/6">
+					<img src="/images/logo.png" alt="Logo" />
+				</Link>
+			)}
+		</>
 	);
 }
