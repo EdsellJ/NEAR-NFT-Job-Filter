@@ -12,13 +12,5 @@ export function getTimeDifference(endTime: string, startTime: string) {
 
 export function formatDate(eventDate: string) {
 	const formattedEventDate = new Date(eventDate);
-	return formattedEventDate.toLocaleDateString("en-US", {
-		// timeZone: "UTC",
-		timeZoneName: "short",
-		weekday: "long",
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-		timeStyle: "full",
-	});
+	return formattedEventDate.toUTCString();
 }
