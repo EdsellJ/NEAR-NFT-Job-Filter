@@ -5,21 +5,21 @@
 	},
 	"students": {
 		"title": "Students",
-		"icon": "",
+		"icon": "/images/student_icon.svg",
 		"features": [
-			{ "icon": "", "title": "" },
-			{ "icon": "", "title": "" },
-			{ "icon": "", "title": "" },
-			{ "icon": "", "title": "" }
+			{ "icon": "/images/discover_content.svg", "title": "Discover Content" },
+			{ "icon": "/images/take_classes.svg", "title": "Take Classes" },
+			{ "icon": "/images/earn_badges.svg", "title": "Earn Badges" },
+			{ "icon": "/images/generate_resume.svg", "title": "Generate Resume" }
 		]
 	},
 	"teachers": {
 		"title": "Teachers",
 		"icon": "",
 		"features": [
-			{ "icon": "", "title": "" },
-			{ "icon": "", "title": "" },
-			{ "icon": "", "title": "" }
+			{ "icon": "/images/sell_courses.svg", "title": "Sell Courses" },
+			{ "icon": "/images/teach_classes.svg", "title": "Teach Classes" },
+			{ "icon": "/images/issue_badges.svg", "title": "Issue Badges" }
 		]
 	}
 }
