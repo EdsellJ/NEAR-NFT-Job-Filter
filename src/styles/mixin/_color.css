@@ -1,3 +1,7 @@
+.border-banner-gradient {
+	background: linear-gradient(90deg, #f7623f 13.54%, rgba(244, 161, 0, 0.8) 98.18%);
+}
+
 .bg-primary {
 	background-color: var(--deep-blue);
 }
