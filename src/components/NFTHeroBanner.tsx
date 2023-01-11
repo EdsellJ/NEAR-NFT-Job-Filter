@@ -1,6 +1,8 @@
 import Button from "components/Button";
+import { _getCompanyList } from "utils/company";
 
 export default function NFTHeroBanner() {
+	_getCompanyList().then((response) => console.log("response-_getCompanyList", response));
 	return (
 		<section className="container mt-2">
 			<div className="flex items-center px-16">

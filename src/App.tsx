@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import Home from "pages/Home";
 import RegisterCompany from "pages/register/Company";
 import Job from "pages/register/Job";
+import HomePage from "pages";
 import Applicant from "pages/Applicant";
 import NotFound from "pages/NotFound";
 import { useAppDispatch } from "app/hooks";
@@ -45,6 +46,7 @@ const App = () => {
 			/>
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/lms" element={<HomePage />} />
 				<Route path="register/company" element={<RegisterCompany />} />
 				<Route path="register/job" element={<Job />} />
 				<Route path="/job/:_id" element={<Applicant />} />
