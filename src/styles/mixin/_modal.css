@@ -1,0 +1,18 @@
+.modal-overlay {
+	height: 100%;
+	cursor: pointer;
+}
+.modal {
+	height: fit-content;
+	width: fit-content;
+	margin: auto;
+	border: none;
+}
+.modal.site-modal {
+	z-index: 100;
+}
+@media (max-width: 768px) {
+	.appmodal {
+		width: 85vw;
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"head": [
+		{ "key": "email", "text": "Receiver Email" },
+		{ "key": "name", "text": "NFT name" },
+		{ "key": "date", "text": "Date Processed" }
+	],
+	"body": [
+		["marleyc@educoin.com", "Intro to NEAR", "4/1/2022"],
+		["chancec@educoin.com", "Recording with Kang", "4/1/2022"],
+		["tianaf@educoin.com", "Intro to Telos", "4/1/2022"],
+		["jakobw@educoin.com", "Intro to Algorand", "4/1/2022"],
+		["miras@educoin.com", "Trending NFTs with Metaversity", "4/1/2022"]
+	]
+}

@@ -1,0 +1,39 @@
+.border-banner-gradient {
+	background: linear-gradient(90deg, #f7623f 13.54%, rgba(244, 161, 0, 0.8) 98.18%);
+}
+
+.bg-primary {
+	background-color: var(--deep-blue);
+}
+
+.text-secondary {
+	background-color: var(--red);
+}
+
+.border-gray {
+	border: 1px solid var(--deep-gray);
+}
+
+.border-blue {
+	border: 1px solid var(--deep-blue);
+}
+
+.jobboard {
+	background-color: var(--light-background);
+}
+
+.hover-element:hover {
+	opacity: 0.8;
+}
+
+.hover-bg-primary:hover {
+	color: var(--deep-blue);
+	border: 1px solid var(--deep-blue);
+	background-color: transparent;
+}
+
+.hover-bg-light-blue:hover {
+	color: white;
+	border: 1px solid var(--deep-blue);
+	background-color: var(--deep-blue);
+}
