@@ -5,7 +5,7 @@ interface Props {
 
 export default function Checkbox({ label, name }: Props) {
 	return (
-		<div className="flex items-center text-deep-blue my-4">
+		<div className="flex items-center text-primary my-4">
 			<input type="checkbox" name={name} className="mr-4" />
 			<label>{label}</label>
 		</div>

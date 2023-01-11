@@ -1,11 +1,10 @@
-.bg-deep-blue {
+.bg-primary {
 	background-color: var(--deep-blue);
 }
 
-.text-deep-blue {
-	color: var(--deep-blue);
+.text-secondary {
+	background-color: var(--red);
 }
-
 
 .border-gray {
 	border: 1px solid var(--deep-gray);
@@ -23,7 +22,7 @@
 	opacity: 0.8;
 }
 
-.hover-bg-deep-blue:hover {
+.hover-bg-primary:hover {
 	color: var(--deep-blue);
 	border: 1px solid var(--deep-blue);
 	background-color: transparent;

@@ -4,7 +4,7 @@ export default function Search() {
 	return (
 		<div className="search mb-4 flex w-full justify-between items-center">
 			<Button
-				className="bg-deep-blue text-white py-2 px-6 rounded-full hover-bg-deep-blue"
+				className="bg-primary text-white py-2 px-6 rounded-full hover-bg-primary"
 				text="Post a Job"
 			/>
 			<form className="search space-x-6 w-9/12 flex items-center my-4">
@@ -31,7 +31,7 @@ export default function Search() {
 					/>
 				</div>
 				<Button
-					className="text-deep-blue py-2 px-6 border-blue rounded-full hover-bg-light-blue"
+					className="text-primary py-2 px-6 border-blue rounded-full hover-bg-light-blue"
 					text="Search"
 				/>
 			</form>

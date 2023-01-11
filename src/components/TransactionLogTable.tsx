@@ -15,7 +15,7 @@ export default function TransactionLogTable({ toggleModal }: Props) {
 					</button>
 				</div>
 				<table className="w-full">
-					<thead className="py-4 bg-deep-blue text-white border border-black">
+					<thead className="py-4 bg-primary text-white border border-black">
 						<tr>
 							{transactionLogs.head.map((item) => (
 								<th key={item.key} className="border py-3 border-black">

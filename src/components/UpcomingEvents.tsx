@@ -8,7 +8,7 @@ import { formatDate } from "utils/getTimeDifference";
 export default function UpcomingEvents() {
 	const { data, status } = useQuery(["list-event"], getEventBriteEventList);
 	return (
-		<div className="my-8 upcoming-events px-16 text-deep-blue mx-auto flex flex-col justify-center  container">
+		<div className="my-8 upcoming-events px-16 text-primary mx-auto flex flex-col justify-center  container">
 			<h2>Upcoming Events</h2>
 			<p>Earn badges at upcoming events!</p>
 			<div className="span w-1/6 my-4">
