@@ -1,5 +1,6 @@
 import { jobType } from "@types";
 import Button from "components/Button";
+import { getJobPostDate } from "utils/getTimeDifference";
 
 interface Props {
 	jobDetails: jobType;
@@ -10,7 +11,7 @@ export default function JobDetails({ jobDetails }: Props) {
 		<div className="job-details">
 			<div className="button-group mt-4 flex items-center justify-between">
 				<div className="company flex items-center">
-					<img src="/images/company.png" className="w-1/4 mr-1" alt="job role" />
+					<img src="/images/company.png" className="w-1/6 mr-1" alt="job role" />
 					<h3>{jobDetails.company}</h3>
 				</div>
 				<a
@@ -36,14 +37,17 @@ export default function JobDetails({ jobDetails }: Props) {
 				<img src="/images/location.svg" alt="location" className="mr-2" />
 				{jobDetails.location}
 			</h4>
-			<div className="tags  space-x-4 mb-4">
-				{jobDetails.tags.map((item) => (
-					<Button
-						key={item}
-						text={item}
-						className="border-blue px-4 py-1 rounded-full text-primary hover-bg-light-blue"
-					/>
-				))}
+			<div className="row-tag flex justify-between items-center">
+				<div className="tags  space-x-4 mb-4">
+					{jobDetails.tags.map((item) => (
+						<Button
+							key={item}
+							text={item}
+							className="border-blue px-4 py-0.5 rounded-full text-primary hover-bg-light-blue"
+						/>
+					))}
+				</div>
+				<p className="font-bold">Posted {getJobPostDate(jobDetails.date)}</p>
 			</div>
 			<div dangerouslySetInnerHTML={{ __html: jobDetails.description }} />
 		</div>
