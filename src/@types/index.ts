@@ -5,5 +5,6 @@ export type jobType = {
 	tags: string[];
 	description: string;
 	company: string;
+	apply_url: string;
 	location: string;
 };

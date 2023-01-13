@@ -1,0 +1,24 @@
+.medium-category-label {
+	display: none;
+}
+
+.section.page-centered.posting-header {
+	display: none;
+}
+
+.section.page-centered {
+	margin: 10px 0px;
+}
+
+.job-details div ul {
+	margin: 10px 0px;
+}
+
+.job-details li {
+	list-style: disc;
+	margin: 2px 0px;
+}
+
+.job-details div p {
+	margin: 10px 0px;
+}
