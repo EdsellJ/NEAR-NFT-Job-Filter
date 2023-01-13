@@ -1,14 +1,22 @@
 import { useState } from "react";
 import Button from "components/Button";
-import { useAppDispatch } from "app/hooks";
-import { searchJobs } from "redux/slices/searchSlice";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { clearSearch, searchJobs } from "redux/slices/searchSlice";
 
 export default function Search() {
 	const dispatch = useAppDispatch();
+	const { search } = useAppSelector((state) => state.searchSlice);
 	const [searchJob, setSearchJob] = useState({
 		title: "",
 		location: "",
 	});
+
+	const searchQuery = search.title || search.location;
+
+	const searchText = searchQuery ? "Clear" : "Search";
+	const searchStyle = searchQuery
+		? "bg-primary text-white"
+		: "text-primary hover-bg-light-blue";
 
 	function handleInput(e: any) {
 		setSearchJob({
@@ -19,7 +27,12 @@ export default function Search() {
 
 	function handleSubmit(e: any) {
 		e.preventDefault();
-		dispatch(searchJobs(searchJob));
+		if (searchQuery) {
+			setSearchJob({ title: "", location: "" });
+			dispatch(clearSearch());
+		} else {
+			dispatch(searchJobs(searchJob));
+		}
 	}
 
 	return (
@@ -42,6 +55,7 @@ export default function Search() {
 						className="rounded border-blue w-full py-2 pl-16"
 						placeholder="Search by title"
 						name="title"
+						value={searchJob.title}
 						onChange={handleInput}
 					/>
 				</div>
@@ -55,13 +69,14 @@ export default function Search() {
 						className="rounded w-full border-blue py-2 pl-16"
 						placeholder="City, state or zipcode"
 						name="location"
+						value={searchJob.location}
 						onChange={handleInput}
 					/>
 				</div>
 				<Button
-					className="text-primary py-2 px-6 border-blue rounded-full hover-bg-light-blue"
+					className={`py-2 px-6 border-blue rounded-full ${searchStyle}`}
 					type="submit"
-					text="Search"
+					text={searchText}
 				/>
 			</form>
 		</div>
