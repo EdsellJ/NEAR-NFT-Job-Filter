@@ -1,6 +1,6 @@
 export type jobType = {
 	id: string;
-	date: string;
+	date: Date;
 	title: string;
 	tags: string[];
 	description: string;

@@ -14,3 +14,15 @@ export function formatDate(eventDate: string) {
 	const formattedEventDate = new Date(eventDate);
 	return formattedEventDate.toUTCString();
 }
+
+export function getJobPostDate(postedDate: Date) {
+	const postedDateInstance: any | Date = new Date(postedDate);
+	const currentDate: any | Date = new Date();
+	const dateDifferenceMill = currentDate - postedDateInstance;
+	const dateDifference = dateDifferenceMill / 1000;
+	const day = 24 * 60 * 60;
+	const calDayValue = dateDifference / day;
+	const dayValue = Math.round(calDayValue);
+	const result = dayValue > 1 ? "days" : "day";
+	return `${dayValue} ${result} ago`;
+}
