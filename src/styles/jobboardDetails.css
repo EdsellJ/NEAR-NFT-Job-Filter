@@ -27,3 +27,7 @@
 	height: 40px;
 	width: 40px;
 }
+
+.fit-content {
+	width: fit-content;
+}

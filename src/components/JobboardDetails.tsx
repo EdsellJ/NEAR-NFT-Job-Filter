@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 import NFTLayout from "layouts/NFTLayout";
@@ -25,6 +25,15 @@ export default function JobboardDetails() {
 	return (
 		<NFTLayout title="Job board" className="jobboard pb-14">
 			<section className="container py-8 text-primary">
+				{jobDetails && (
+					<ul className="breadcrumb flex items-center bg-white pl-4 pr-10 py-1 shadow rounded ">
+						<li>
+							<Link to="/job-board" className="hover:text-secondary">Job board</Link>
+						</li>
+						<span className="text-3xl mx-2 -mt-7"> ˲ </span>{" "}
+						<li className="font-bold">{jobDetails.company}</li>
+					</ul>
+				)}
 				{status === "error" ? (
 					<p>unable to fetch job details</p>
 				) : status === "loading" ? (
