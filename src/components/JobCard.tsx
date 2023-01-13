@@ -13,7 +13,7 @@ export default function JobCard({ job }: Props) {
 	const postedDaysAgo = getJobPostDate(job.date);
 	return (
 		<Link to={`/job-board/${jobSlug}`}>
-			<div className="jobcard border bg-white border-gray rounded-xl py-5 px-4 hover:bg-lightgrey">
+			<div className="jobcard border h-52 bg-white border-gray rounded-xl py-5 px-4 hover:bg-lightgrey">
 				<div className="top flex items-start justify-between">
 					<div className="w-full">
 						<h5 className="text-lg text-primary font-bold truncate">{job.title}</h5>

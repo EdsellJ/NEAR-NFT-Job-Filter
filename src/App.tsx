@@ -17,7 +17,7 @@ import {
 import { getSkills, getJobTypes, getAllJobs } from "redux/slices/jobSlice";
 import BadgeCreator from "pages/BadgeCreator";
 import JobBoard from "pages/JobBoard";
-import JobboardDetails from "components/JobboardDetails";
+import JobboardDetailsView from "components/JobboardDetailsView";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
@@ -52,7 +52,7 @@ const App = () => {
 				<Route path="/job/:_id" element={<Applicant />} />
 				<Route path="/badge-creator" element={<BadgeCreator />} />
 				<Route path="/job-board" element={<JobBoard />} />
-				<Route path="/job-board/:_id" element={<JobboardDetails />} />
+				<Route path="/job-board/:_id" element={<JobboardDetailsView />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>
