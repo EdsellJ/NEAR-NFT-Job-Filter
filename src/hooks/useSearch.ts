@@ -20,7 +20,5 @@ export default function useSearch() {
 
 	const result = search.title || search.location ? searcher.search(searchString) : jobs;
 
-	console.log("result", result);
-
 	return { status, result };
 }
