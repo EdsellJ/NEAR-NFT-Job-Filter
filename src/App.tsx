@@ -45,8 +45,8 @@ const App = () => {
 				draggable
 			/>
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/lms" element={<HomePage />} />
+				{/* <Route path="/" element={<Home />} /> */}
+				<Route path="/" element={<HomePage />} />
 				<Route path="register/company" element={<RegisterCompany />} />
 				<Route path="register/job" element={<Job />} />
 				<Route path="/job/:_id" element={<Applicant />} />

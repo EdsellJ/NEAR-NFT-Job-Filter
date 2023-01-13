@@ -9,7 +9,7 @@ export default function NFTHeader() {
 		<header className={`w-full ${fixedHeader} bottom-shadow bg-white`}>
 			<div className="container mx-auto">
 				<div className="flex w-full items-center justify-between py-6">
-					<Logo />
+					<Logo  />
 					<Menu />
 				</div>
 			</div>

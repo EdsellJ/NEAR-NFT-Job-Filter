@@ -5,7 +5,7 @@ import NFTLayout from "layouts/NFTLayout";
 import toSlug from "utils/toSlug";
 import { getWeb3Jobs } from "utils/job";
 import SpinnerRipple from "components/SpinnerRipple";
-import JobBoardBreadCrumb from "components/JobBoardBreadCrumb";
+// import JobBoardBreadCrumb from "components/JobBoardBreadCrumb";
 import JobDetails from "components/JobDetails";
 import type { jobType } from "@types";
 import "styles/jobboardDetails.css";
@@ -25,7 +25,7 @@ export default function JobboardDetailsView() {
 	return (
 		<NFTLayout title="Job board" className="jobboard pb-14">
 			<section className="container py-8 text-primary">
-				{jobDetails && <JobBoardBreadCrumb company={jobDetails.company} />}
+				{/* {jobDetails && <JobBoardBreadCrumb company={jobDetails.company} />} */}
 				{status === "error" ? (
 					<p>unable to fetch job details</p>
 				) : status === "loading" ? (
