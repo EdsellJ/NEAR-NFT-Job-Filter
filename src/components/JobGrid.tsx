@@ -1,14 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import { jobType } from "@types";
+
 import JobCard from "components/JobCard";
 import { getWeb3Jobs } from "utils/job";
 import JobCardLoader from "components/JobCardLoader";
+import type { jobType } from "@types";
 
-export default function JobGrid() {
+interface Props {
+	scroll: number;
+}
+
+export default function JobGrid({ scroll }: Props) {
 	const { data, status } = useQuery<{ data: jobType[][] }>(["getWeb3Jobs"], getWeb3Jobs);
+	const jobGridPosition = Number(scroll) > 300 ? "absolute right-0 w-9/12 pl-14" : "w-9/12";
 
 	return (
-		<div className="jobgrid flex flex-col w-11/12">
+		<div className={`jobgrid ${jobGridPosition} flex flex-col`}>
 			<div className="wrapper mx-auto justify-center flex">
 				{status === "error" ? (
 					<p>Unable to fetch job due to an error</p>
