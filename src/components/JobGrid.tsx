@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { jobType } from "@types";
 import JobCard from "components/JobCard";
 import { getWeb3Jobs } from "utils/job";
-import JobCardLoader from "./JobCardLoader";
+import JobCardLoader from "components/JobCardLoader";
 
 export default function JobGrid() {
 	const { data, status } = useQuery<{ data: jobType[][] }>(["getWeb3Jobs"], getWeb3Jobs);
