@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 import { getJobPostDate } from "utils/getTimeDifference";
-import { jobType } from "@types";
 import toSlug from "utils/toSlug";
+import type { jobType } from "@types";
 
 interface Props {
 	job: jobType;

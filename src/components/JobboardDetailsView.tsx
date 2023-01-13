@@ -4,10 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 import NFTLayout from "layouts/NFTLayout";
 import toSlug from "utils/toSlug";
 import { getWeb3Jobs } from "utils/job";
-import { jobType } from "@types";
 import SpinnerRipple from "components/SpinnerRipple";
 import JobBoardBreadCrumb from "components/JobBoardBreadCrumb";
 import JobDetails from "components/JobDetails";
+import type { jobType } from "@types";
 import "styles/jobboardDetails.css";
 
 export default function JobboardDetailsView() {
