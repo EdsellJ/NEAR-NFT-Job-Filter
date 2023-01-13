@@ -22,3 +22,8 @@
 .job-details div p {
 	margin: 10px 0px;
 }
+
+.title-row img {
+	height: 40px;
+	width: 40px;
+}

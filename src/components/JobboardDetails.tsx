@@ -34,7 +34,14 @@ export default function JobboardDetails() {
 						<div className="job-details">
 							<div className="button-group my-4 flex items-center justify-between">
 								<div className="left flex space-x-4 items-center justify-between">
-									<h3>{jobDetails.company}</h3>
+									<div className="company flex items-center">
+										<img
+											src="/images/company.png"
+											className="w-1/4 mr-1"
+											alt="job role"
+										/>
+										<h3>{jobDetails.company}</h3>
+									</div>
 									{jobDetails.tags.map((item) => (
 										<Button
 											key={item}
@@ -53,7 +60,16 @@ export default function JobboardDetails() {
 									Apply with My Profile
 								</a>
 							</div>
-							<h3 className="text-primary my-4">{jobDetails.title}</h3>
+							<div className="title-row flex items-center">
+								<img
+									src="/images/briefcase.png"
+									className="w-1/12 mr-4"
+									alt="job role"
+									height="50px"
+									width="50px"
+								/>
+								<h3 className="text-primary my-4">{jobDetails.title}</h3>
+							</div>
 							<h4 className="flex items-center mb-8">
 								<img src="/images/location.svg" alt="location" className="mr-2" />
 								{jobDetails.location}
