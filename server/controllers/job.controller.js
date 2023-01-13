@@ -1,4 +1,6 @@
 const db = require("../models");
+const axios = require("axios");
+
 const Job = db.jobs;
 const Skill = db.skills;
 const JobType = db.jobTypes;
@@ -46,6 +48,17 @@ exports.getAllJobs = async (req, res) => {
 		res.status(200).send(result);
 	} catch (err) {
 		res.status(500).send(err.message);
+	}
+};
+
+exports.getWeb3Jobs = async (req, res) => {
+	try {
+		const result = await axios.get(
+			`${process.env.REACT_APP_WEB3_API}?token=${process.env.REACT_APP_WEB3_API_TOKEN}`
+		);
+		res.status(200).send(result.data);
+	} catch (error) {
+		res.status(500).send(error.message);
 	}
 };
 
