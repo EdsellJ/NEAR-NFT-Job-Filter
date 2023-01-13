@@ -53,7 +53,7 @@ export default function Search() {
 					/>
 					<input
 						className="rounded border-blue w-full py-2 pl-16"
-						placeholder="Search by title"
+						placeholder="Search by company, role"
 						name="title"
 						value={searchJob.title}
 						onChange={handleInput}
