@@ -32,6 +32,7 @@ export default function Search() {
 				</div>
 				<Button
 					className="text-primary py-2 px-6 border-blue rounded-full hover-bg-light-blue"
+					type="submit"
 					text="Search"
 				/>
 			</form>

@@ -3,9 +3,11 @@ import Filter from "components/Filter";
 import JobGrid from "components/JobGrid";
 import Search from "components/Search";
 import useScroll from "hooks/useScroll";
+import useSearch from "hooks/useSearch";
 
 export default function JobBoard() {
 	const { scroll } = useScroll();
+	const { searcher, status } = useSearch();
 	return (
 		<NFTLayout title="Job board" className="jobboard pb-14">
 			<section className="container mt-2">

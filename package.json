@@ -76,6 +76,7 @@
 		]
 	},
 	"devDependencies": {
+		"@types/fuzzy-search": "^2.1.2",
 		"autoprefixer": "^10.4.13",
 		"http-proxy-middleware": "^2.0.6",
 		"postcss": "^8.4.18",
