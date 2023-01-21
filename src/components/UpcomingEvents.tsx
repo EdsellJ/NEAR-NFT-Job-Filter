@@ -7,6 +7,10 @@ import { formatDate } from "utils/getTimeDifference";
 
 export default function UpcomingEvents() {
 	const { data, status } = useQuery(["list-event"], getEventBriteEventList);
+
+	console.log("data", data);
+	const eventArray = status === "success" ? data.data.events.reverse() : [];
+
 	return (
 		<div className="my-8 upcoming-events px-16 text-primary mx-auto flex flex-col justify-center  container">
 			<h2>Upcoming Events</h2>
@@ -20,7 +24,7 @@ export default function UpcomingEvents() {
 				<SpinnerRipple centerRipple />
 			) : (
 				<ul className="">
-					{data.data.events.map((briteEvent: any) => {
+					{eventArray.map((briteEvent: any) => {
 						const eventStartDate = formatDate(briteEvent.start.utc);
 						const eventEndDate = formatDate(briteEvent.end.utc);
 						return (
