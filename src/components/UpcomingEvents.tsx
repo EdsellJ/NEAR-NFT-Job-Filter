@@ -8,7 +8,6 @@ import { formatDate } from "utils/getTimeDifference";
 export default function UpcomingEvents() {
 	const { data, status } = useQuery(["list-event"], getEventBriteEventList);
 
-	console.log("data", data);
 	const eventArray = status === "success" ? data.data.events.reverse() : [];
 
 	return (
