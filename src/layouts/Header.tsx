@@ -29,6 +29,7 @@ const Header = () => {
 				accountId: accounts[0].accountId,
 				contractId: process.env.REACT_APP_CONTRACT_ID,
 			});
+			console.log("data", data);
 			const temp = [];
 			for (let item of data) {
 				const title = item.metadata.title;
